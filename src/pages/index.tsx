@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { MinusIcon } from "@heroicons/react/20/solid";
 
 const Home: NextPage = () => {
   return (

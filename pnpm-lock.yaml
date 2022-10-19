@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@heroicons/react': ^2.0.12
+  '@tailwindcss/aspect-ratio': ^0.4.2
   '@types/node': 18.11.2
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -14,6 +16,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.1.13
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.6.0
   tailwindcss: ^3.1.8
   typescript: 4.8.4
 
@@ -21,8 +24,11 @@ dependencies:
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.6.0_react@18.2.0
 
 devDependencies:
+  '@heroicons/react': 2.0.12_react@18.2.0
+  '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.1.8
   '@types/node': 18.11.2
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -33,7 +39,7 @@ devDependencies:
   postcss: 8.4.18
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
-  tailwindcss: 3.1.8_postcss@8.4.18
+  tailwindcss: 3.1.8
   typescript: 4.8.4
 
 packages:
@@ -68,6 +74,14 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@heroicons/react/2.0.12_react@18.2.0:
+    resolution: {integrity: sha512-FZxKh3i9aKIDxyALTgIpSF2t6V6/eZfF5mRu41QlwkX3Oxzecdm1u6dpft6PQGxIBwO7TKYWaMAYYL8mp/EaOg==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: true
 
   /@humanwhocodes/config-array/0.10.7:
@@ -247,6 +261,14 @@ packages:
     dependencies:
       tslib: 2.4.0
     dev: false
+
+  /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.1.8
+    dev: true
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -1846,6 +1868,14 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-icons/4.6.0_react@18.2.0:
+    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -1855,7 +1885,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -2059,12 +2088,10 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.1.8_postcss@8.4.18:
+  /tailwindcss/3.1.8:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-    peerDependencies:
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

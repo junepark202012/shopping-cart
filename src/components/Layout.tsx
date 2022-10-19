@@ -12,8 +12,12 @@ export default function Layout({ children }: Props) {
       <Head>
         <title>TODO</title>
       </Head>
-      <Navbar />
-      <main>{children}</main>
+      <div className="container mx-auto mb-4">
+        <header className="sticky top-0 z-10">
+          <Navbar />
+        </header>
+        <main>{children}</main>
+      </div>
     </>
   );
 }
