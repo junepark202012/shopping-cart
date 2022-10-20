@@ -2,6 +2,7 @@ import Image from "next/future/image";
 import ButtonGroup from "./store/ButtonGroup";
 import ButtonGroupItem from "./store/ButtonGroupItem";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
+import { formatCurrency } from "../utils/formatCurrency";
 
 interface StoreItemProps {
   id: number;
@@ -32,7 +33,9 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
             </h3>
             <p className="mt-1 text-sm text-gray-500">{name}</p>
           </div>
-          <p className="text-sm font-medium text-gray-900">{price}</p>
+          <p className="text-sm font-medium text-gray-900">
+            {formatCurrency(price)}
+          </p>
         </div>
       </div>
       <ButtonGroup>
