@@ -6,8 +6,6 @@ interface buttonGroupProps {
 
 export default function buttonGroup({ children }: buttonGroupProps) {
   return (
-    <span className="isolate inline-flex w-fit rounded-md shadow-sm">
-      {children}
-    </span>
+    <div className="isolate flex w-fit rounded-md shadow-sm">{children}</div>
   );
 }

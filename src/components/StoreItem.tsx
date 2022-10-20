@@ -3,6 +3,7 @@ import ButtonGroup from "./store/ButtonGroup";
 import ButtonGroupItem from "./store/ButtonGroupItem";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { formatCurrency } from "../utils/formatCurrency";
+import ButtonAddToCart from "./store/ButtonAddToCart";
 
 interface StoreItemProps {
   id: number;
@@ -12,6 +13,8 @@ interface StoreItemProps {
 }
 
 export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
+  const quantity = 1;
+
   return (
     <div className="flex flex-col items-center gap-3">
       <div key={id} className="group relative self-stretch">
@@ -23,7 +26,7 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
             fill
           />
         </div>
-        <div className="mt-4 flex justify-between">
+        <div className="flex justify-between">
           <div>
             <h3 className="text-sm text-gray-700">
               <a href="/temp">
@@ -37,16 +40,22 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
             {formatCurrency(price)}
           </p>
         </div>
+        <div className="flex h-9 justify-center">
+          {quantity === 0 ? (
+            <ButtonAddToCart />
+          ) : (
+            <ButtonGroup>
+              <ButtonGroupItem className={"rounded-l-md hover:cursor-pointer"}>
+                <MinusIcon className="h-4 w-4" />
+              </ButtonGroupItem>
+              <ButtonGroupItem>7</ButtonGroupItem>
+              <ButtonGroupItem className={"rounded-r-md hover:cursor-pointer"}>
+                <PlusIcon className="h-4 w-4" />
+              </ButtonGroupItem>
+            </ButtonGroup>
+          )}
+        </div>
       </div>
-      <ButtonGroup>
-        <ButtonGroupItem className={"rounded-l-md"}>
-          <MinusIcon className="h-4 w-4" />
-        </ButtonGroupItem>
-        <ButtonGroupItem>7</ButtonGroupItem>
-        <ButtonGroupItem className={"rounded-r-md"}>
-          <PlusIcon className="h-4 w-4" />
-        </ButtonGroupItem>
-      </ButtonGroup>
     </div>
   );
 }
